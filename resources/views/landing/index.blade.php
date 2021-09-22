@@ -11,27 +11,17 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
     <!-- Styles --> 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('css/app.css') }}?v={{ mt_rand() }}" rel="stylesheet"> 
 </head> 
 <body> 
     <div id="app"> 
-
-        <div class="alert alert-primary" role="alert">
-            A simple primary alert—check it out!
-        </div>
-
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-
-
-
+        <router-view></router-view>
     </div> 
 
 
 
 
     <!-- Scripts --> 
-    <script src="{{ asset('js/app.js') }}"></script> 
+    <script src="{{ asset('js/app.js') }}?v={{ mt_rand() }}"></script> 
 </body> 
 </html>
