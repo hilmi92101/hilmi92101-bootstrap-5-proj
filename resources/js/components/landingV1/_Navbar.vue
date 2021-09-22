@@ -11,11 +11,11 @@
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
 
-            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <button @click.prevent="toggleNavbar()" class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <div :class="collapseOffCanvas()" class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#header">Home</a>
@@ -58,6 +58,7 @@
             return {   
                 scrolledToBottom: false,
                 topNavCollapse: false,
+                offCanvas: false,
             }   
         },    
         created() {  
@@ -100,6 +101,18 @@
                     return ``;
                 }
 
+            },
+
+            collapseOffCanvas(){
+                if(this.offCanvas){
+                    return `open`;
+                } else {
+                    return ``;
+                }
+            },
+
+            toggleNavbar(){
+                this.offCanvas = !this.offCanvas;
             },
 
 
