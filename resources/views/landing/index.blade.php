@@ -6,7 +6,7 @@
     <!-- CSRF Token --> 
     <meta name="csrf-token" content="{{ csrf_token() }}"> 
     <title>{{ config('app.name', 'Laravel') }}</title> 
-     
+
     <!-- Fonts --> 
     <link rel="dns-prefetch" href="//fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
@@ -22,6 +22,8 @@
 
 
     <!-- Scripts --> 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="{{ asset('js/app.js') }}?v={{ mt_rand() }}"></script> 
 </body> 
 </html>

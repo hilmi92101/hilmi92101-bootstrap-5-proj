@@ -11547,3 +11547,43 @@ textarea.form-control-lg {
     max-width: 1140px;
   }
 }
+
+.custom-admin-1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.custom-admin-1 .custom-container-1 {
+  position: relative;
+  width: 100%;
+}
+.custom-admin-1 .custom-container-1 .navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #287bff;
+  border-left: 10px solid #287bff;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.custom-admin-1 .custom-container-1 .navigation ul {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.custom-admin-1 .custom-container-1 .navigation ul li {
+  position: relative;
+  width: 200%;
+  list-style: none;
+}
+.custom-admin-1 .custom-container-1 .navigation ul li:hover {
+  background: #fff;
+}
+.custom-admin-1 .custom-container-1 .navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+}
