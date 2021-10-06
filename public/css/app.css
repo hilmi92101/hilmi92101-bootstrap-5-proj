@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
@@ -11552,7 +11553,7 @@ textarea.form-control-lg {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -11647,7 +11648,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 .custom-admin-1 .custom-container-1 .navigation.active {
-  width: 60px;
+  width: 80px;
 }
 .custom-admin-1 .custom-container-1 .main {
   position: absolute;
@@ -11716,4 +11717,106 @@ textarea.form-control-lg {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.custom-admin-1 .custom-container-1 .main .card-box {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1 {
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1 .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2em;
+  color: #287bff;
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1 .card-name {
+  color: #999;
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1 .icon-box {
+  color: #999;
+  font-size: 3.5em;
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1:hover {
+  background: #287bff;
+}
+.custom-admin-1 .custom-container-1 .main .card-box .custom-card-1:hover .numbers, .custom-admin-1 .custom-container-1 .main .card-box .custom-card-1:hover .card-name, .custom-admin-1 .custom-container-1 .main .card-box .custom-card-1:hover .icon-box {
+  color: #fff;
+}
+.custom-admin-1 .custom-container-1 .main .details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-card-header h2, .custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-card-header .h2 {
+  font-weight: 600;
+  color: #287bff;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-card-header .custom-button-1 {
+  position: relative;
+  padding: 5px 10px;
+  background: #287bff;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 6px;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 thead td {
+  font-weight: 600;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 tr {
+  color: #222;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 tr td {
+  padding: 10px;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 tr td:last-child {
+  text-align: end;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 tr:last-child {
+  border-bottom: none;
+}
+.custom-admin-1 .custom-container-1 .main .details .recent-orders .custom-table-1 tbody tr:hover {
+  background: #287bff;
+  color: #fff;
+}
+.custom-admin-1 .custom-container-1 .main.active {
+  width: calc(100% - 80px);
+  left: 80px;
 }

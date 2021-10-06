@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 .custom-nav-1 {
     
@@ -335,7 +336,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     min-height: 100vh;
     overflow-x: hidden;
@@ -454,7 +455,7 @@
         }
 
         .navigation.active {
-            width: 60px;
+            width: 80px;
         }
 
         .main {
@@ -533,6 +534,142 @@
                 }
 
             }
+
+            .card-box {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 30px;
+
+                .custom-card-1 {
+                    position: relative;
+                    background: $white;
+                    padding: 30px;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+
+                    .numbers {
+                        position: relative;
+                        font-weight: 500;
+                        font-size: 2.0em;
+                        color: $blue;
+                    }
+
+                    .card-name {
+                        color: $black2;
+                        font-size: 1.1em;
+                        margin-top: 5px;
+                    }
+
+                    .icon-box {
+                        color: $black2;
+                        font-size: 3.5em;
+                    }
+                     
+                }
+
+                .custom-card-1:hover {
+                    background: $blue;
+
+                    .numbers, .card-name, .icon-box {
+
+                        color: $white;
+                       
+                    }
+
+                    
+
+                }
+            }
+
+            .details {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-gap: 30px;
+                //margin-top: 10px;
+
+                .recent-orders {
+                    position: relative;
+                    display: grid;
+                    min-height: 500px;
+                    background: $white;
+                    padding: 20px;
+                    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+                    border-radius: 20px;
+
+                    .custom-card-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+                        h2 {
+                            font-weight: 600;
+                            color: $blue;
+                        }
+
+                        .custom-button-1 {
+                            position: relative;
+                            padding: 5px 10px;
+                            background: $blue;
+                            text-decoration: none;
+                            color: $white;
+                            border-radius: 6px;
+                        }
+                    }
+
+                    .custom-table-1 {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 10px;
+
+                        thead td {
+                            font-weight: 600;
+                        }
+
+                        tr {
+                            color: $black1;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+                            td {
+                                padding: 10px;
+                            }
+
+                            td:last-child {
+                                text-align: end;
+                            }
+                        }
+
+                        tr:last-child {
+                            border-bottom: none;
+                        }
+                         
+
+                        tbody tr:hover {
+                            background: $blue;
+                            color: $white;
+                        }
+
+                        
+
+
+                    }
+                     
+                }
+
+            }
+        }
+
+        .main.active {
+            width: calc(100% - 80px); // same as .navigation.active width 
+            left: 80px;
         }
 
     }
