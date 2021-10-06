@@ -330,6 +330,8 @@
     $black1: #222;
     $black2: #999;
 
+    $sidebarWidth: 300px;
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -345,7 +347,7 @@
 
         .navigation {
             position: fixed;
-            width: 300px;
+            width: $sidebarWidth;
             height: 100%;
             background: $blue;
             border-left: 10px solid $blue;
@@ -353,7 +355,7 @@
             overflow: hidden;
 
             ul {
-                padding: 0;
+                 padding: 0;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -362,18 +364,174 @@
                 li {
                     position: relative;
                     width: 200%;
+                    width: 100%;
                     list-style: none;
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
 
+                    a {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        display: flex;
+                        text-decoration: none;
+                        color: $white;
+
+                        .icon {
+                            position: relative;
+                            display: block;
+                            min-width: 60px;
+                            height: 60px;
+                            line-height: 70px;
+                            text-align: center;
+
+                            ion-icon {
+                                font-size: 1.75em;
+                            }
+                        }
+
+                        .title {
+
+                            position: relative;
+                            display: block;
+                            padding: 0 10px;
+                            height: 60px;
+                            line-height: 60px;
+                            text-align: start;
+                            white-space: nowrap;
+                        }
+
+
+                    }
+                    
 
                 }
 
-                li:hover {
+                li.hovered, li:hover {
                     background: $white;
+
+                    a {
+                        color: $blue;
+                    }
+
+                    // curve outside
+                    a::before {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: -50px;
+                        width: 50px;
+                        height: 50px;
+                        background: transparent;
+                        border-radius: 50%;
+                        box-shadow: 35px 35px 0 10px $white;
+                        pointer-events: none;
+
+                    }
+
+                    a::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        bottom: -50px;
+                        width: 50px;
+                        height: 50px;
+                        background: transparent;
+                        border-radius: 50%;
+                        box-shadow: 35px -35px 0 10px $white;
+                        pointer-events: none;
+
+                    }
+                    
                 }
+
 
                 li:nth-child(1) {
                     margin-bottom: 40px;
+                    pointer-events: none;
                 }
+            }
+        }
+
+        .navigation.active {
+            width: 60px;
+        }
+
+        .main {
+            position: absolute;
+            width: calc(100% - $sidebarWidth);
+            left: $sidebarWidth;
+            min-height: 100vh;
+            background: $white;
+            transition: 0.5s;
+
+            .topbar {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 10px;
+
+                .toggle {
+                    position: relative;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2.5em;
+                    cursor: pointer;
+                }
+
+                .search {
+                    position: relative;
+                    width: 400px;
+                    margin: 0 10px;
+
+                    label {
+                        position: relative;
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                            height: 40px;
+                            border-radius: 40px;
+                            padding: 5px 20px; 
+                            padding-left: 35px; 
+                            font-size: 18px;
+                            outline: none;
+                            border: 1px solid $black2;
+
+                        }
+
+                        ion-icon {
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+
+                .user {
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
             }
         }
 

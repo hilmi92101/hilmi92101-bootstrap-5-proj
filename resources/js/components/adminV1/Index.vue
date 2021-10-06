@@ -3,77 +3,38 @@
     
         <div class="custom-admin-1">
             <div class="custom-container-1">
-                <div class="navigation">
+                <div :class="{active: sidebarIsActive}" class="navigation">
                     <ul>
-                        <li>
+                        <li v-for="(link,index) in links" @mouseover="mouseOverLink(link)" :class="link.classes">
                             <a href="#">
                                 <span class="icon">
-                                    <ion-icon name="logo-apple"></ion-icon>
+                                    <ion-icon :name="link.icon"></ion-icon>
                                 </span>
-                                <span class="title">Brand Name</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </span>
-                                <span class="title">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="people-outline"></ion-icon>
-                                </span>
-                                <span class="title">Customers</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                </span>
-                                <span class="title">Message</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="help-buoy-outline"></ion-icon>
-                                </span>
-                                <span class="title">Help</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="settings-outline"></ion-icon>
-                                </span>
-                                <span class="title">Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="lock-closed-outline"></ion-icon>
-                                </span>
-                                <span class="title">Password</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="log-out-outline"></ion-icon>
-                                </span>
-                                <span class="title">Sign Out</span>
+                                <span class="title">{{ link.title }}</span>
                             </a>
                         </li>
                     </ul>
                 </div>
+
+                <div class="main">
+                    <div class="topbar">
+                        <div @click="toggleSidebar()" class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                        <div class="search">
+                            <label>
+                                <input type="text" placeholder="Search here">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </div>
+                        <div class="user">
+                            <img :src="images.user" alt="">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </div>   
 </template>   
 <script>   
@@ -86,12 +47,73 @@
         },  
     	data() {   
             return {   
-                   
+
+                sidebarIsActive: true,
+                links: [
+
+                    {
+                        icon: 'logo-apple',
+                        title: 'Brand Name',
+                        classes: '',
+                    },
+                    {
+                        icon: 'home-outline',
+                        title: 'Dashboard',
+                        classes: '',
+                    },
+                    {
+                        icon: 'people-outline',
+                        title: 'Customers',
+                        classes: '',
+                    },
+                    {
+                        icon: 'chatbubble-outline',
+                        title: 'Message',
+                        classes: '',
+                    },
+                    {
+                        icon: 'help-buoy-outline',
+                        title: 'Help',
+                        classes: '',
+                    },
+                    {
+                        icon: 'settings-outline',
+                        title: 'Settings',
+                        classes: '',
+                    },
+                    {
+                        icon: 'lock-closed-outline',
+                        title: 'Password',
+                        classes: '',
+                    },
+                    {
+                        icon: 'log-out-outline',
+                        title: 'Sign Out',
+                        classes: '',
+                    },
+                    
+                    
+                ],
+
+                images: {
+                    user: '/images/user-icon-1.png',
+                }
             }   
         },    
         created() {   
         },   
     	methods: {   
+
+            toggleSidebar(){
+                this.sidebarIsActive = !this.sidebarIsActive;
+            },
+
+            mouseOverLink(link){
+                this.links.forEach(function(item) {
+                    item.classes = '';
+                });
+                link.classes = 'hovered';
+            },
               
         },   
         computed: {   
