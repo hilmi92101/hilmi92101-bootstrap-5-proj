@@ -50,7 +50,6 @@
                                 <h2>Recent Orders</h2>
                                 <a href="#" class="custom-button-1">View All</a>
                             </div>
-
                             <table class="custom-table-1">
                                 <thead>
                                     <tr>
@@ -66,12 +65,36 @@
                                         <td>{{ order.price }}</td>
                                         <td>{{ order.payment }}</td>
                                         <td>
-                                            <span class="status delivered">
+                                            <span 
+                                                :class="statusClasses(order.status)" 
+                                                class="status"
+                                            >
                                                 {{ order.status }}
                                             </span>
                                         </td>
                                     </tr>
                                 </tbody>
+                            </table>
+                        </div>
+
+                        <div class="recent-customers">
+                            <div class="custom-card-header">
+                                <h2>Recent Customers</h2>
+                                <a href="#" class="custom-button-1">View All</a>
+                            </div>
+                            <table class="custom-table-2">
+                               
+                                <tr v-for="(customer,index) in customers">
+                                    <td width="60px">
+                                        <div class="img-box">
+                                            <img :src="customer.image" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>{{ customer.name }}</h4>
+                                        <span>{{ customer.country }}</span>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -174,14 +197,14 @@
                     {
                         name: 'PS5',
                         price: '$2, 500',
-                        payment: 'Paid',
-                        status: 'Delivered',
+                        payment: 'Due',
+                        status: 'Pending',
                     },
                     {
                         name: 'PS3',
                         price: '$1, 000',
                         payment: 'Paid',
-                        status: 'Delivered',
+                        status: 'Return',
                     },
                     {
                         name: 'PS2',
@@ -220,6 +243,40 @@
                         status: 'Delivered',
                     },
                 ],
+                customers: [
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Hilmi Azman',
+                        country: 'Malaysia',
+                    },
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Maryam',
+                        country: 'Singapore',
+                    },
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Boi Ziyad',
+                        country: 'Russia',
+                    },
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Hilmi Azman',
+                        country: 'Malaysia',
+                    },
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Maryam',
+                        country: 'Singapore',
+                    },
+                    {
+                        image: '/images/customer-icon-1.png',
+                        name: 'Boi Ziyad',
+                        country: 'Russia',
+                    },
+                    
+                    
+                ],
 
                 images: {
                     user: '/images/user-icon-1.png',
@@ -239,6 +296,12 @@
                     item.classes = '';
                 });
                 link.classes = 'hovered';
+            },
+
+            statusClasses(status){
+
+                var status = status.toLowerCase();
+                return status;
             },
               
         },   

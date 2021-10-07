@@ -596,6 +596,26 @@
                 grid-gap: 30px;
                 //margin-top: 10px;
 
+                .custom-card-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    h2 {
+                        font-weight: 600;
+                        color: $blue;
+                    }
+
+                    .custom-button-1 {
+                        position: relative;
+                        padding: 5px 10px;
+                        background: $blue;
+                        text-decoration: none;
+                        color: $white;
+                        border-radius: 6px;
+                    }
+                }
+
                 .recent-orders {
                     position: relative;
                     display: grid;
@@ -604,26 +624,6 @@
                     padding: 20px;
                     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
                     border-radius: 20px;
-
-                    .custom-card-header {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-start;
-
-                        h2 {
-                            font-weight: 600;
-                            color: $blue;
-                        }
-
-                        .custom-button-1 {
-                            position: relative;
-                            padding: 5px 10px;
-                            background: $blue;
-                            text-decoration: none;
-                            color: $white;
-                            border-radius: 6px;
-                        }
-                    }
 
                     .custom-table-1 {
                         width: 100%;
@@ -640,10 +640,42 @@
 
                             td {
                                 padding: 10px;
+
+                                .status {
+                                    padding: 2px 4px;
+                                    color: $white;
+                                    border-radius: 4px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                }
+
+                                .status.delivered {
+                                    background: #8de02c;
+                                }
+
+                                .status.pending {
+                                    background: #f9ca3f;
+                                }
+
+                                .status.return {
+                                    background: #f00;
+                                }
+
+                                .status.in-progress {
+                                    background: #1795ce;
+                                }
                             }
 
                             td:last-child {
                                 text-align: end;
+                            }
+
+                            td:nth-child(2) {
+                                text-align: end;
+                            }
+
+                            td:nth-child(3) {
+                                text-align: center;
                             }
                         }
 
@@ -656,13 +688,73 @@
                             background: $blue;
                             color: $white;
                         }
-
-                        
-
-
                     }
-                     
                 }
+
+                .recent-customers {
+
+                    position: relative;
+                    display: grid;
+                    min-height: 500px;
+                    padding: 20px;
+                    background: $white;
+                    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+                    border-radius: 20px;
+
+                    .img-box {
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 30px;
+                        overflow: hidden;
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+
+                        }
+                    }
+
+                    .custom-table-2 {
+                        
+                        tr {
+                            td {
+                                padding: 12px 10px;
+
+                                h4 {
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    line-height: 1.2em;
+                                    margin-bottom: 0;
+
+                                    span {
+                                        font-size: 14px;
+                                        color: $black2;
+                                    }
+                                }
+                            }
+                        }
+
+                        tr:hover {
+                            background: $blue;
+                            color: $white;
+
+                            td {
+                                h4 {
+                                    span {
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                
 
             }
         }
@@ -672,6 +764,101 @@
             left: 80px;
         }
 
+        
+
     }
 
 }
+
+
+/*************************/
+/*     Media Queries     */
+/*************************/
+@media (max-width: 991px){
+    .custom-admin-1{
+        .custom-container-1 { // if not include this, css below won't applied;
+            .navigation {
+                left: -300px;
+            }
+
+            .navigation.active {
+                width: 300px;
+                left: 0;
+            }
+    
+            .main {
+                width: 100%;
+                left: 0;
+                
+                .card-box {
+                    grid-template-columns: repeat(2, 1fr);
+
+                }
+            }
+
+            .main.active {
+                left: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .custom-admin-1{
+        .custom-container-1 { // if not include this, css below won't applied;
+            .main {
+                .details {
+                    grid-template-columns: repeat(1, 1fr);
+
+                    .recent-orders {
+                        overflow-x: auto;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+@media (max-width: 480px){
+    .custom-admin-1{
+        .custom-container-1 { // if not include this, css below won't applied;
+            .main {
+
+                .card-box {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                .details {
+                    .custom-card-header {
+                        
+                        h2 {
+                            font-size: 20px;
+                        }
+    
+                    }
+                }
+
+                .topbar {
+
+                    .user {
+                        min-width: 40px;
+                    }
+                }
+
+
+
+
+
+
+
+
+                
+            }
+
+        }
+    }
+}
+
+
