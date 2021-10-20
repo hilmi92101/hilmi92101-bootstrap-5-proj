@@ -845,16 +845,34 @@
                     .user {
                         min-width: 40px;
                     }
+                    
+                    .toggle {
+                        z-index: 10001;
+                    }
                 }
 
+            }
 
+            .main.active {
+                .topbar {
+                    .toggle {
+                        position: fixed;
+                        right: 0;
+                        left: initial;
+                        color: $white;
+                    }
+                }
+            }
 
+            .navigation {
+                width: 100%;
+                left: -100%;
+                z-index: 1000;
+            }
 
-
-
-
-
-                
+            .navigation.active {
+                width: 100%;
+                left: 0;
             }
 
         }

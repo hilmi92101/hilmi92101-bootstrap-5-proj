@@ -11931,4 +11931,22 @@ textarea.form-control-lg {
   .custom-admin-1 .custom-container-1 .main .topbar .user {
     min-width: 40px;
   }
+  .custom-admin-1 .custom-container-1 .main .topbar .toggle {
+    z-index: 10001;
+  }
+  .custom-admin-1 .custom-container-1 .main.active .topbar .toggle {
+    position: fixed;
+    right: 0;
+    left: initial;
+    color: #fff;
+  }
+  .custom-admin-1 .custom-container-1 .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .custom-admin-1 .custom-container-1 .navigation.active {
+    width: 100%;
+    left: 0;
+  }
 }
