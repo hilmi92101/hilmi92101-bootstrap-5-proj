@@ -2,6 +2,7 @@ import THome from './components/tests/Home';
 import TAbout from './components/tests/About'; 
 
 import LandingV1 from './components/landingV1/Index'; 
+import LandingStarbucks from './components/landingStarbucks/Index'; 
 import AdminV1 from './components/adminV1/Index'; 
 
 export default { 
@@ -20,6 +21,11 @@ export default {
         { 
             path:'/landing-v1', 
             component: LandingV1 
+        },
+
+        { 
+            path:'/landing-starbucks', 
+            component: LandingStarbucks 
         },
 
         { 
