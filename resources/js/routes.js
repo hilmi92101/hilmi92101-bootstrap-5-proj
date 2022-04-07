@@ -8,7 +8,7 @@ import AdminV1 from './components/adminV1/Index';
 import AdminV2 from './components/adminV2/Index'; 
 
 
-import CollectionNavbar from './components/collections/Navbar'; 
+import TestNavbar from './components/collections/TestNavbar'; 
 
 
 
@@ -47,8 +47,8 @@ export default {
             component: AdminV2 
         },
         { 
-            path:'/collections/navbar', 
-            component: CollectionNavbar 
+            path:'/collections/test-navbar', 
+            component: TestNavbar
         },
 
         
