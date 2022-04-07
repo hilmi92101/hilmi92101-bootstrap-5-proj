@@ -1,10 +1,16 @@
 import THome from './components/tests/Home';  
 import TAbout from './components/tests/About'; 
+import TVuex from './components/tests/Vuex'; 
 
 import LandingV1 from './components/landingV1/Index'; 
 import LandingStarbucks from './components/landingStarbucks/Index'; 
 import AdminV1 from './components/adminV1/Index'; 
 import AdminV2 from './components/adminV2/Index'; 
+
+
+import CollectionNavbar from './components/collections/Navbar'; 
+
+
 
 export default { 
     mode: 'history', 
@@ -17,6 +23,10 @@ export default {
             path:'/about', 
             component: TAbout 
         }, 
+        { 
+            path:'/test-vuex', 
+            component: TVuex 
+        },
 
 
         { 
@@ -36,5 +46,11 @@ export default {
             path:'/admin-v2', 
             component: AdminV2 
         },
+        { 
+            path:'/collections/navbar', 
+            component: CollectionNavbar 
+        },
+
+        
     ] 
 }
