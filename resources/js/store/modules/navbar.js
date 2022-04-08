@@ -1,25 +1,50 @@
 const state = {
-    offCanvas: false,
+    canvas: false,
+    logoImage: {
+        src: `/images/logo.svg`,
+        alt: `The logo`,
+    },
 };
 const getters = {
 
-    offCanvas: state => {
-        return state.offCanvas;
+    canvas: state => {
+        return state.canvas;
     },
-
+    logoImage: state => {
+        return state.logoImage;
+    },
     
 };
 const actions = {
 
-    toggleNavbar: (context, payload) => {
-        context.commit('toggleNavbar');
+    toggleCanvas: (context, payload) => {
+        context.commit('toggleCanvas');
     },
+
+    toggleDropdown: (context, payload) => {
+        var e = payload; 
+        const _d = e.target.closest(".dropdown");
+        let _m = document.querySelector(".dropdown-menu", _d);
+
+        setTimeout(
+            function () {
+            const shouldOpen = _d.matches(":hover");
+            _m.classList.toggle("show", shouldOpen);
+            _d.classList.toggle("show", shouldOpen);
+
+            _d.setAttribute("aria-expanded", shouldOpen);
+            },
+            e.type === "mouseleave" ? 300 : 0
+        );
+    },
+
+    
 
 };
 const mutations = {
 
-    toggleNavbar: (state, payload) => {
-        state.offCanvas = !state.offCanvas;
+    toggleCanvas: (state, payload) => {
+        state.canvas = !state.canvas;
     },
 
 };
